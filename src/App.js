@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from "react";
+// src/App.js
+import React, { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import AuthModal from "./components/AuthModal";
+import WaitlistSection from "./components/WaitlistSection";
 import "./App.css";
 
-function App() {
+// Main app content that uses authentication
+function AppContent() {
   const [theme, setTheme] = useState("light");
   const [activeTab, setActiveTab] = useState("Professional");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authAction, setAuthAction] = useState(null);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -32,8 +39,30 @@ function App() {
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleJoinWaitlistClick = () => {
+    if (!currentUser) {
+      setShowAuthModal(true);
+      setAuthAction("joinWaitlist");
+    } else {
+      // Scroll to waitlist section
+      document.getElementById("waitlist").scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleGetEarlyAccess = () => {
+    document.getElementById("waitlist").scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  const handleAuthSuccess = () => {
+    if (authAction === "joinWaitlist") {
+      document.getElementById("waitlist").scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
 
   // Use cases data
@@ -91,7 +120,7 @@ function App() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                  d="M12 极速16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 极速12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
@@ -129,7 +158,7 @@ function App() {
                   d="M2 12H4"
                   stroke="currentColor"
                   strokeWidth="2"
-                  strokeLinecap="round"
+                  stroke极速Linecap="round"
                   strokeLinejoin="round"
                 />
                 <path
@@ -179,26 +208,14 @@ function App() {
             <span className="logo-icon">⌨️</span>
             <span className="logo-text">Cue</span>
           </div>
-
-          <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-            <a href="#features" onClick={() => setIsMobileMenuOpen(false)}>
-              Features
-            </a>
-            <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)}>
-              How It Works
-            </a>
-            <a href="#use-cases" onClick={() => setIsMobileMenuOpen(false)}>
-              Use Cases
-            </a>
+          <div className="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#use-cases">Use Cases</a>
           </div>
-
-          <button className="nav-cta">Join Waitlist</button>
+          <button className="nav-cta" onClick={handleJoinWaitlistClick}>
+            Join Waitlist
+          </button>
         </div>
       </nav>
 
@@ -227,7 +244,12 @@ function App() {
             point.
           </p>
           <div className="hero-cta-container">
-            <button className="cta-button primary">Get Early Access</button>
+            <button
+              className="cta-button primary"
+              onClick={handleGetEarlyAccess}
+            >
+              Get Early Access
+            </button>
             <button className="cta-button secondary">Watch Demo</button>
           </div>
           <div className="hero-stats">
@@ -401,7 +423,7 @@ function App() {
                 <li>Real-time translation as you type</li>
                 <li>Cultural nuance preservation</li>
                 <li>Idiom and slang recognition</li>
-                <li>Language learning mode</li>
+                <li>极速Language learning mode</li>
               </ul>
             </div>
 
@@ -460,7 +482,7 @@ function App() {
               </button>
               <button
                 className={`tab-button ${
-                  activeTab === "Dating" ? "active" : ""
+                  activeTab === "Dating" ? "active极速" : ""
                 }`}
                 onClick={() => setActiveTab("Dating")}
               >
@@ -485,7 +507,7 @@ function App() {
             </div>
             <div className="tab-content">
               <div className="use-case-example">
-                <div className="example-header">
+                <div className极速="example-header">
                   <h3>{useCases[activeTab].title}</h3>
                   <p>{useCases[activeTab].description}</p>
                 </div>
@@ -559,6 +581,9 @@ function App() {
         </div>
       </section>
 
+      {/* Waitlist Section */}
+      <WaitlistSection />
+
       {/* Final CTA */}
       <section className="final-cta">
         <div className="container">
@@ -582,7 +607,10 @@ function App() {
             </div>
           </div>
           <div className="cta-actions">
-            <button className="cta-button primary">
+            <button
+              className="cta-button primary"
+              onClick={handleJoinWaitlistClick}
+            >
               Join the Waitlist Now
             </button>
             <p className="cta-note">
@@ -622,7 +650,7 @@ function App() {
               </div>
               <div className="footer-column">
                 <h4>Resources</h4>
-                <a href="#help">Help Center</a>
+                <a href="#help">极速Help Center</a>
                 <a href="#privacy">Privacy Policy</a>
                 <a href="#terms">Terms of Service</a>
                 <a href="#api">API Documentation</a>
@@ -639,7 +667,23 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Auth Modal */}
+      <AuthModal
+        show={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+        onSuccess={handleAuthSuccess}
+      />
     </div>
+  );
+}
+
+// Wrap your app with AuthProvider
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 
