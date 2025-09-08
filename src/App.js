@@ -633,29 +633,7 @@ function AppContent() {
                 confidence.
               </p>
             </div>
-            <div className="footer-links">
-              <div className="footer-column">
-                <h4>Product</h4>
-                <a href="#features">Features</a>
-                <a href="#use-cases">Use Cases</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#waitlist">Waitlist</a>
-              </div>
-              <div className="footer-column">
-                <h4>Company</h4>
-                <a href="#about">About</a>
-                <a href="#blog">Blog</a>
-                <a href="#careers">Careers</a>
-                <a href="#contact">Contact</a>
-              </div>
-              <div className="footer-column">
-                <h4>Resources</h4>
-                <a href="#help">极速Help Center</a>
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#api">API Documentation</a>
-              </div>
-            </div>
+            <div className="footer-links"></div>
           </div>
           <div className="footer-bottom">
             <p>© 2024 Cue AI Technologies. All rights reserved.</p>
