@@ -542,7 +542,6 @@ function AppContent() {
                 accounts this month!"
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-details">
                   <h4>Sarah Chen</h4>
                   <p>Sales Director, Tech Solutions Inc.</p>
@@ -556,7 +555,6 @@ function AppContent() {
                 feels like having a personal translator."
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-details">
                   <h4>Miguel Rodriguez</h4>
                   <p>International Relations Manager</p>
@@ -570,7 +568,6 @@ function AppContent() {
                 midnight!"
               </div>
               <div className="testimonial-author">
-                <div className="author-avatar"></div>
                 <div className="author-details">
                   <h4>James Wilson</h4>
                   <p>Project Lead, Global Solutions</p>
