@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import AuthModal from "./components/AuthModal";
 import WaitlistSection from "./components/WaitlistSection";
 import "./App.css";
+import logo from "./logo/main-logo.png";
 
 // Main app content that uses authentication
 function AppContent() {
@@ -105,7 +106,7 @@ function AppContent() {
     <div className="App">
       {/* Theme Toggle */}
       <div className="theme-toggle-container">
-        <span className="theme-label">Dark Mode</span>
+        {/* <span className="theme-label">Dark Mode</span> */}
         <label className="dreamtime-toggle">
           <input
             type="checkbox"
@@ -205,8 +206,10 @@ function AppContent() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <span className="logo-icon">⌨️</span>
-            <span className="logo-text">Cue</span>
+            {/* <span className="logo-icon">⌨️</span> */}
+            <img src={logo} alt="FlowKeys Logo" className="logo-icon" />
+
+            <span className="logo-text">FlowKeys</span>
           </div>
           <div className="nav-links">
             <a href="#features">Features</a>
@@ -238,8 +241,8 @@ function AppContent() {
             repeat={0}
           />
           <p className="hero-description">
-            Cue is the intelligent keyboard that uses advanced AI to help you
-            craft the perfect message for every situation. From professional
+            FlowKeys is the intelligent keyboard that uses advanced AI to help
+            you craft the perfect message for every situation. From professional
             emails to casual chats, Cue ensures your communication is always on
             point.
           </p>
@@ -320,9 +323,9 @@ function AppContent() {
       <section className="value-prop" id="how-it-works">
         <div className="container">
           <div className="section-header">
-            <h2>How Cue Transforms Your Communication</h2>
+            <h2>How Cue Transforms Your Communication ?</h2>
             <p>
-              Cue integrates seamlessly with your favorite apps to provide
+              FlowKeys integrates seamlessly with your favorite apps to provide
               real-time writing assistance exactly when you need it.
             </p>
           </div>
@@ -361,8 +364,8 @@ function AppContent() {
           <div className="section-header">
             <h2>Powerful Features Designed for Modern Communication</h2>
             <p>
-              Cue combines advanced AI with intuitive design to elevate your
-              messaging experience.
+              FlowKeys combines advanced AI with intuitive design to elevate
+              your messaging experience.
             </p>
           </div>
           <div className="feature-grid">
@@ -423,7 +426,7 @@ function AppContent() {
                 <li>Real-time translation as you type</li>
                 <li>Cultural nuance preservation</li>
                 <li>Idiom and slang recognition</li>
-                <li>极速Language learning mode</li>
+                <li>Language learning mode</li>
               </ul>
             </div>
 
@@ -466,8 +469,8 @@ function AppContent() {
           <div className="section-header">
             <h2>Perfect for Every Communication Scenario</h2>
             <p>
-              See how Cue enhances your daily conversations across different
-              contexts.
+              See how FlowKeys enhances your daily conversations across
+              different contexts.
             </p>
           </div>
           <div className="use-case-tabs">
@@ -537,9 +540,9 @@ function AppContent() {
           <div className="testimonial-grid">
             <div className="testimonial-card">
               <div className="testimonial-content">
-                "Cue has completely transformed how I communicate with clients.
-                The professional tone suggestions have helped me land three new
-                accounts this month!"
+                "FlowKeys has completely transformed how I communicate with
+                clients. The professional tone suggestions have helped me land
+                three new accounts this month!"
               </div>
               <div className="testimonial-author">
                 <div className="author-details">
@@ -550,9 +553,9 @@ function AppContent() {
             </div>
             <div className="testimonial-card">
               <div className="testimonial-content">
-                "As someone who communicates in multiple languages daily, Cue's
-                translation and cultural nuance features are a game-changer. It
-                feels like having a personal translator."
+                "As someone who communicates in multiple languages daily,
+                FlowKeys translation and cultural nuance features are a
+                game-changer. It feels like having a personal translator."
               </div>
               <div className="testimonial-author">
                 <div className="author-details">
@@ -586,8 +589,8 @@ function AppContent() {
         <div className="container">
           <h2>Ready to Transform Your Communication?</h2>
           <p>
-            Join thousands of professionals already using Cue to enhance their
-            daily conversations.
+            Join thousands of professionals already using FlowKeys to enhance
+            their daily conversations.
           </p>
           <div className="cta-features">
             <div className="cta-feature">
@@ -622,8 +625,9 @@ function AppContent() {
           <div className="footer-content">
             <div className="footer-brand">
               <div className="nav-logo">
-                <span className="logo-icon">⌨️</span>
-                <span className="logo-text">Cue</span>
+                {/* <span className="logo-icon">⌨️</span> */}
+                <img src={logo} alt="FlowKeys Logo" className="logo-icon" />
+                <span className="logo-text">FlowKeys</span>
               </div>
               <p>
                 The intelligent keyboard that helps you communicate with
@@ -633,7 +637,7 @@ function AppContent() {
             <div className="footer-links"></div>
           </div>
           <div className="footer-bottom">
-            <p>© 2024 Cue AI Technologies. All rights reserved.</p>
+            <p>© 2024 FlowKeys AI Technologies. All rights reserved.</p>
             <div className="social-links">
               <a href="#twitter">Twitter</a>
               <a href="#linkedin">LinkedIn</a>

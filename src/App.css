@@ -68,7 +68,7 @@ body {
 /* Theme Toggle */
 .theme-toggle-container {
   position: fixed;
-  top: 12px;
+  top: 17px;
   right: 12px;
   display: flex;
   align-items: center;
@@ -168,7 +168,6 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--text-color);
@@ -1174,6 +1173,10 @@ body {
   .footer-links {
     grid-template-columns: repeat(3, 1fr);
   }
+  .logo-text {
+    /* margin-bottom: 10px; */
+    font-size: 20px;
+  }
 }
 
 /* Very small mobile devices */
@@ -1224,6 +1227,17 @@ body {
 
   .stat-label {
     font-size: 0.7rem;
+  }
+  .logo-text {
+    /* margin-bottom: 10px; */
+    font-size: 18px;
+  }
+  .logo-icon {
+    height: 90px;
+    width: 90px;
+    margin-top: 10px;
+    margin-left: -29px !important;
+    margin-right: -25px;
   }
 }
 
@@ -1359,4 +1373,16 @@ body {
   padding: 2rem;
   border-radius: 8px;
   margin-top: 2rem;
+}
+
+.logo-icon {
+  height: 90px;
+  width: 90px;
+  margin-top: 10px;
+  margin-left: -20px;
+  margin-right: -25px;
+}
+
+.logo-text {
+  /* margin-bottom: 10px; */
 }
