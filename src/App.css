@@ -1326,6 +1326,9 @@ body {
   padding: 0.5rem;
   background: #fee2e2;
   border-radius: 4px;
+  margin-top: 15px;
+  font-family: "Rebond";
+  font-weight: 200;
 }
 
 /* Waitlist Section Styles */
